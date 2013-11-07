@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+		<link href="./styles/common.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div id="speed_controls" style="display:none">
+			<div class="control" ontouchend='keyFaster=false;' ontouchstart='keyFaster=true;'>&uarr;</div>
+			<div class="control" ontouchend='keySlower=false;' ontouchstart='keySlower=true;'>&darr;</div>
+		</div>
+		<div id="racer">
+      <!-- SCREEN 0- -->
+      <div id="game-screen" style="display:none">
+  			<div id="hud" style="display:none">
+        		<span id="remaining_time" class="hud">Time remaining: <span id="remaining_time_value" class="value">20.0</span></span> 
+  			</div>
+  			<canvas id="canvas" width="800" height="600" ontouchend='keyFaster=false;' ontouchstart='keyFaster=true;' style="display:none"></canvas>
+  			<canvas id="stop-light" width="100"	height="200" style="display:none"></canvas>
+        <img id="speedometer" src="./images/speedometer.gif" style="position:absolute;left:0;top:30px;display:none">
+        <div style="position:absolute;left:90px;top:98px;color:white">
+          <span id="speed_value" class="value">0</span> mph
+        </div>
+      </div>
+			<!-- SCREEN 1 -->
+			<div id="name-screen" class="title" style="display:none">
+  			<img src="./images/pizza.jpg" class="pizzaBG">
+  			<div id="heading">
+  				<div class="page-title">Welcome to<br><div class="game-title">Pizza <span class="prog-blue">Pro</span>nto.</div></div>
+  				<div class="field-title">Please enter your name:</div>
+  			</div>
+  			<br>
+  			<input id="player-name" type="text" placeholder="Player 1" autofocus="true" maxlength="15" />
+  			<br>
+  			<img id="next" src="./images/next.png" style="width: 100px; height:70px;float:right;padding-right: 30px;">
+  		</div>
+  		<!-- SCREEN 2 -->
+  		<div id="stats-screen" class="title" style="display:none">
+  			<img src="./images/pizza.jpg" class="pizzaBG">
+  			<div id="heading">
+    				<div class="page-title">Hi <span id="player-name-title"></span>.<br>Select your vehicle</div>
+    		</div>
+  			<div id="car-container">
+  			   <img id="car-image1" src="./images/delivery-truck.jpg" class="car_image">
+				   <img id="car-image2" src="./images/blue-pickup.jpg" class="car_image">
+				   <img id="car-image3"src="./images/sports_car_red.jpg" class="car_image">
+  			</div>
+  			<div id="stats-container">
+  				<table>
+  					<tr><td>Car Name:</td><td style="width: 50px;"></td><td id="veh-name"></td></tr>
+  					<tr><td>Mass:</td><td></td><td id="veh-mass"></td></tr>
+  					<tr><td>Acceleration:</td><td></td><td id="veh-accel"></td></tr>
+  					<tr><td>Deceleration:</td><td></td><td id="veh-decel"></td></tr>
+  					<tr><td>Max. Speed:</td><td></td><td id="veh-max-speed"></td></tr>
+  					<tr><td>Pizzas/Trip:</td><td></td><td id="veh-num-pizzas"></td></tr>
+				  </table>
+			  </div>
+			  <img id="next2" src="./images/next.png" style="width: 100px; height:70px;position: absolute; left: 680px;top: 300px;">
+  		</div>
+  		<!-- SCREEN 3 -->
+  		<div id="instructions-screen" class="title" style="display:none">
+  			<img src="./images/pizza.jpg" class="pizzaBG">
+  			<div id="heading">
+    				<div class="page-title">Instructions</div>
+    		</div>
+  			<table>
+  				<tr>
+  					<td>Objective</td>
+  					<td>Deliver as many pizzas as you can within the alotted time</td>
+  				</tr>
+  				<tr>
+  					<td>Steering</td>
+  					<td>Use the Arrow keys to steer the car</td>
+  				</tr>
+  				<tr>
+  					<td>Traffic lights</td>
+  					<td>Try and stop the vehicle as quickly as you can when the light turns red</td>
+  				</tr>
+  				<tr>
+  					<td>Distractions</td>
+  					<td>Try not getting distracted by phone calls, billboards etc.</td>
+  				</tr>
+  				<tr>
+  					<td>Watch out!!!</td>
+  					<td>Each time the car crashes, 5 pizzas will not be delivered
+  				</tr>
+  			</table>
+  			<br>Hit the "Next" button when you're ready to play!!
+  			<img id="next3" src="./images/next.png" style="width: 100px; height:70px;position: absolute; left: 680px;top: 520px;">
+  		</div>
+  		<!-- SCREEN 4 -->
+  		<div id="final-screen" class="title" style="display:none">
+  			<img src="./images/pizza.jpg" class="pizzaBG">
+  			<div style="padding-left: 35px;font-size:25px;">
+          Q. How far did you drive (in miles)?
+          <br>
+          <input type="text" style="margin-left: 0">
+          <br><br />
+          <canvas id="questionCanvas" width="600" height="350" style="background-color: azure;max-width:600px;max-height:350px;"></canvas>
+          <br>Speed Vs. Time
+          <img src="./images/map.gif" class="help-icon map-icon">
+          <img src="./images/video.gif" class="help-icon video-icon">
+  			</div>
+  			<img id="next4" src="./images/next.png" style="width: 100px; height:70px;position:absolute;padding-right: 30px;top: 470px;left: 680px;">
+  		</div>
+		</div>
+		<div id="direction_controls" style="display:none">
+			<div class="control" ontouchend='keyLeft=false;' ontouchstart='keyLeft=true;'>&larr;</div>
+			<div class="control" ontouchend='keyRight=false;' ontouchstart='keyRight=true;'>&rarr;</div>
+		</div>
+		<script src="./scripts/cars.js"></script>
+		<script src="./scripts/observer.js"></script>
+		<script src="./scripts/stoplight.js"></script>
+		<!--script src="./scripts/stoplightchanger.js"></script-->
+		<script src="./scripts/tiltmanager.js"></script>
+		<!--script src="./scripts/gamecontrols.js"></script-->
+		<script src="./scripts/common.js"></script>
+		<script src="./scripts/game.js"></script>
+		<script src="./scripts/gamecontroller.js"></script>
+    <script src="./scripts/chart.min.js"></script>
+		<script>
+			var gameController;
+			/*var stopLight = new StopLight("stop-light");
+			var tiltManager = new TiltManager();
+			var gameControls = new GameControls("controls", {"canvas": "canvas"});
+			var stopLightChanger = new StopLightChanger(stopLight, 5000);*/
+			window.onload = function(){
+				gameController = new GameController({"canvas": "canvas", "stoplightCanvas": "stop-light", "hud": "hud"});
+			};
+		</script>
+	</body>
+</html>

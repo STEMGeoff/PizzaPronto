@@ -1,0 +1,204 @@
+/** {
+	-webkit-user-select:none;
+}*/
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.prog-blue {
+	color: #179bd7;
+}
+.game-title {
+	font-size: 65px;
+	font-style: italic; 
+}
+#hud{
+	position: absolute;
+	z-index: 1;
+	width: 802px;
+	height: 30px;
+	padding: 5px 0;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 0.8em;
+	background-color: #179bd7;
+	color: white;
+	border: 1px solid black;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.hud {
+	margin-left: 5px;
+	border: 1px solid;
+}
+#remaining_time {
+	float: right;
+	margin-right: 5px;
+}
+#racer {
+	position: relative;
+	z-index: 0;
+	width: 800px;
+	height: 600px;
+	margin: auto;
+	border: 1px solid;
+	font-weight: bold;
+	font-family: Arial, Chalkduster, 'Comic Sans MS';
+}
+#canvas {
+	position: absolute;
+	z-index: 0;
+	width: 800px;
+	height: 600px;
+	z-index: 0;
+	background-color: azure;
+	border: 1px solid black;
+}
+#stop-light {
+	position: absolute;
+	top: 30px;
+	left: 700px;
+	background-color: gray;
+	border:1px solid black;
+}
+#speed_controls{
+	position: absolute;
+	left: 10px;
+	top: 250px;
+}
+#speed_controls *, #direction_controls * {
+	display: block;
+	margin-bottom: 40px;
+}
+.control {
+	border:1px solid black;
+	background-color: #179bd7;
+	color: white;
+	padding: 10px;
+	padding-top: 20px;
+	text-align: center;
+	width:60px;
+	height:60px;
+	margin-left:20px;
+	font-size:30px;
+	font-weight: bold;
+}
+#direction_controls {
+	position: absolute;
+	left: 88%;
+	top: 250px;
+}
+.title {
+	padding-top: 50px;
+	/*padding-left: 50px;*/
+    color: #FF0245;
+    font-size: 35px;
+    margin: auto;
+    font-weight: bold;
+    width: 100%;
+}
+#heading {
+	width: 100%;
+	text-align: center;
+}
+input {
+  	font-size: 40px;
+   	width: 80%;
+   	text-align: center;
+   	color: #ff8a00;
+   	margin-left: 10%;
+  	-webkit-border-radius: 10px;
+  	-moz-border-radius: 10px;
+  	border-radius: 10px;
+  	z-index: 10;
+  	/*-webkit-user-select:auto;*/
+}
+.pizzaBG {
+	z-index:-1;
+	position: absolute;
+	width:100%;
+	height: 100%;
+	opacity: 0.3;
+	left:0;
+	top:0;
+}
+.page-title {
+	font-size: 50px;
+	margin-bottom: 20px;
+}
+
+/******************************************
+Car selection screen
+*******************************************/
+#stats-screen.title {
+	padding-top: 10px;
+}
+#stats-screen .page-title {
+	font-size: 30px;
+}
+#car-container{
+	width:100%;
+}
+.car_image{
+	width:220px;
+	height:180px;
+	border: 2px solid #179bd7;
+	border-radius: 5px;
+	top:100px;
+	position:absolute;
+}
+#car-image1{
+	left:35px;
+}
+#car-image2{
+	left:290px;
+}
+#car-image3{
+	left:545px;
+}
+#stats-container{
+	width:600px;
+	height:230px;
+	position: absolute;
+	background-color:green;
+	top: 300px;
+	left: 35px;
+	font-size: 19px;
+	color: white;
+	padding: 8px;
+	border: 7px solid brown;
+	border-radius: 15px;
+}
+#stats-container tr td{
+	margin: 0;
+	padding-bottom: 10px;
+}
+.pizza-small{
+	width: 22px;
+	height: 22px;
+}
+/******************************************
+Help screen
+*******************************************/
+#instructions-screen {
+	font-size: 20px;
+	padding-left: 10px;
+	width: 90%;
+}
+#instructions-screen tr td{
+	margin: 0;
+	padding-bottom: 20px;
+	vertical-align: top;
+	padding-right: 10px;
+}
+.help-icon {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	left: 680px;
+}
+.map-icon {
+	top: 170px;
+}
+.video-icon {
+	top: 270px;
+}
