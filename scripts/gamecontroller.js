@@ -17,7 +17,7 @@ function GameController(opts){
 	var chosenVehicle;
 	var startOptions = {
 	  canvas: canvas, render: render, update: update, step: step,
-	  images: ["background", "sprites_copy"],
+	  images: ["background", "sprites"],
 	  keys: [
 	  { keys: [KEY.LEFT,  KEY.A], mode: 'down', action: function() { keyLeft   = true;  } },
 	  { keys: [KEY.RIGHT, KEY.D], mode: 'down', action: function() { keyRight  = true;  } },
